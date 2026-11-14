@@ -107,5 +107,5 @@ quantized-model runtime (packages from PyPI). No telemetry.
 
 ## License
 
-License: to be decided. Manrope is used under the SIL Open Font License 1.1; see
+[MIT](LICENSE). Manrope is used under the SIL Open Font License 1.1; see
 [THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md).

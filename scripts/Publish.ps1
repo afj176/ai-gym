@@ -9,6 +9,7 @@ if($LASTEXITCODE -ne 0){throw 'App publish failed'}
 Remove-Item -LiteralPath (Join-Path $payload 'AiGym.pdb') -ErrorAction SilentlyContinue
 & (Join-Path $PSScriptRoot 'Assert-ReleasePayload.ps1') -Payload $payload
 Copy-Item -LiteralPath (Join-Path $appRoot 'README.md') -Destination $payload
+Copy-Item -LiteralPath (Join-Path $appRoot 'LICENSE') -Destination $payload
 $notices=Join-Path $appRoot 'THIRD-PARTY-NOTICES.md'
 if(Test-Path -LiteralPath $notices){Copy-Item -LiteralPath $notices -Destination $payload}
 New-Item -ItemType Directory -Path (Join-Path $payload 'licenses') -Force | Out-Null
