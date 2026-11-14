@@ -2,16 +2,16 @@
 
 <img src="characters/01-spring.png" alt="Spring, a mint-green flying squirrel with one paw raised" width="180" align="right">
 
-AI Gym is a Windows app for practising with local AI: shape a dataset, train an adapter, compare held-out answers from two models and keep the evidence on your own PC. The identity is about repetition that leads somewhere. The logo is an open G, a loop that ends in a small lifted square, and the tagline finishes the thought: **Practice makes possibility.**
+AI Gym is a Windows app for practising with local AI: shape a dataset, train an adapter, compare held-out answers from two models and keep the evidence on your own PC. The identity is about repetition that leads somewhere. The logo is Spring, the mascot, beside the AI Gym wordmark, and the tagline finishes the thought: **Practice makes possibility.**
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="logo-kit/png/brand-reversed-1024w.png">
-  <img src="logo-kit/png/brand-primary-outlined-1024w.png" alt="AI Gym logo: an open green G with a small lifted square, beside the AI Gym wordmark" width="320">
+  <source media="(prefers-color-scheme: dark)" srcset="logo-kit/png/logo-dark-1024w.png">
+  <img src="logo-kit/png/logo-light-1024w.png" alt="AI Gym logo: Spring the flying squirrel beside the AI Gym wordmark" width="320">
 </picture>
 
 ## The mascot
 
-**Spring** is a flying squirrel modelled in soft, matte clay: mint fur, evergreen ears and tail, a cream face and large dark eyes. The tail curls like the G and the raised paw stands in for its lifted square. Spring is alert, encouraging and slightly cheeky, the training partner who thinks you have one more attempt in you.
+**Spring** is a flying squirrel modelled in soft, matte clay: mint fur, evergreen ears and tail, a cream face and large dark eyes. Spring is alert, encouraging and slightly cheeky, the training partner who thinks you have one more attempt in you.
 
 Four companions share the same clay and colours. **Ripple** the axolotl is quietly observant, **Tempo** the owl is patient and methodical, **Pivot** the turtle is thoughtful and resourceful, and **Zip** the rabbit is playful and hard to discourage.
 
@@ -19,7 +19,7 @@ Four companions share the same clay and colours. **Ripple** the axolotl is quiet
 
 Where Spring appears in the app:
 
-- **Title bar and app icon.** Inside the app Spring is the logo: a 32 px Spring sits next to the wordmark, and the taskbar icon is Spring too.
+- **Title bar and app icon.** A 32 px Spring sits next to the wordmark in the title bar, and the taskbar icon is Spring too.
 - **Home.** Spring cheers beside the tagline ("You got this") and shrinks when the window is narrow.
 - **Empty states.** Spring sits above a short title and one next step. "You got this" invites a start, "I'm listening" waits for a file or a search, and "Let me think" marks a comparison or an experiment that has not been opened.
 - **Results.** "That worked" plays once as a short animation when an export or a training run finishes, then settles to a still. "Try again" replaces the artwork when something fails. If animations are turned off in Windows, only the stills are shown.
@@ -35,20 +35,21 @@ Please don't:
 
 ## Logo
 
-| File (in `logo-kit/svg`, PNG copies in `logo-kit/png`) | Use it for |
+The logo is Spring and the wordmark side by side. There is no separate symbol: where a square mark is needed, Spring stands alone.
+
+| File (in `logo-kit/png`) | Use it for |
 | --- | --- |
-| `brand-primary-outlined` | The default: the G and the wordmark side by side, on light backgrounds. |
-| `brand-reversed` | The same lockup in white, for dark backgrounds. |
-| `brand-symbol` | The G alone: favicons, profile pictures and other square spaces. |
-| `brand-mono` | One-colour printing, in ink. |
-| `brand-wordmark-outlined` | The lettering alone. The app places it next to Spring. |
+| `logo-light` | The default: Spring and the wordmark in ink, on light backgrounds. 512, 1024 and 2048 px wide, transparent. |
+| `logo-dark` | The same lockup with the wordmark in paper white, for dark backgrounds. |
+| `mascot` | Spring alone: favicons, profile pictures, app icons and other square spaces. 64 to 1024 px, transparent. |
+| `brand-wordmark-outlined` | The lettering alone, also as SVG in `logo-kit/svg`. The app and the website place it next to Spring. |
 
-- **Minimum size.** In marketing and print, keep the logo at least 180 px wide and the symbol at least 24 px. The app's 48 px title bar uses a compact lockup instead: a 32 px Spring and a 78 px wide wordmark, which works there because the window frames it.
-- **Clear space.** Leave a margin as wide as the stroke of the G on every side.
-- **Do** use the SVG wherever you can, the PNG where you cannot, and the reversed logo on dark backgrounds.
-- **Don't** stretch, rotate or recolour the logo, add shadows or outlines, or set the name in a font yourself. The wordmark is drawn artwork (Manrope at weight 750, converted to outlines).
+- **Minimum size.** In marketing and print, keep Spring at least 32 px tall in the lockup, which makes the whole logo about 130 px wide. Alone, Spring can go down to 16 px for a favicon. The app's 48 px title bar uses a compact lockup instead: a 32 px Spring and a 78 px wide wordmark, which works there because the window frames it.
+- **Clear space.** Leave a margin of a quarter of Spring's height on every side, the same as the gap between Spring and the wordmark.
+- **Do** use `logo-light` on light backgrounds and `logo-dark` on dark ones, and keep Spring to the left of the wordmark.
+- **Don't** stretch, rotate or recolour the logo, add shadows or outlines, swap Spring for another character, or set the name in a font yourself. The wordmark is drawn artwork (Manrope at weight 750, converted to outlines).
 
-`logo-kit/preview/logo-usage.png` shows the four main versions on one sheet.
+`logo-kit/preview/logo-usage.png` shows both lockups and Spring alone on one sheet.
 
 ## Colour
 
@@ -63,7 +64,7 @@ Greens throughout: a pale, cool paper, deep evergreen ink and one strong green f
 | Mist | `#EAF2EE` | Quiet inset areas, such as loading placeholders |
 | Ink | `#102C2B` | Text and the wordmark |
 | Muted | `#405F5D` | Secondary text and captions |
-| Accent | `#006B58` | Buttons, links, selected items, progress, and the G itself |
+| Accent | `#006B58` | Buttons, links, selected items and progress |
 | Line | `#667F79` | Strong borders; ordinary borders use it at 30% opacity |
 | Ochre | `#7A4E00` | Warning text |
 | Brick | `#A3302B` | Error text |
@@ -109,12 +110,12 @@ Say what is saved, where it goes and what still needs your approval. A saved con
 | Path | What it holds |
 | --- | --- |
 | `tokens.json`, `tokens.css` | The palette, light and dark theme colours and fonts, for code |
-| `logo-kit/svg`, `logo-kit/png` | The logo versions listed above (PNG at 512 to 4096 px wide; the symbol from 64 to 2048 px) |
-| `logo-kit/favicon` | Favicons, touch icons and a web manifest |
+| `logo-kit/png`, `logo-kit/svg` | The logo files listed above: the lockups at 512 to 2048 px wide, Spring alone from 64 to 1024 px, and the wordmark as PNG (512 to 4096 px wide) and SVG |
+| `logo-kit/favicon` | Spring as favicons, touch icons and a web manifest |
 | `logo-kit/preview` | The logo usage sheet |
 | `logo-kit/fonts` | Manrope and its licence |
 | `characters` | Spring and the four companions on round backdrops, 512 px |
-| `graphics` | Share images as SVG and PNG: 1200 × 630 Open Graph, 1080 × 1080 square, 1500 × 500 header, a 1024 px profile picture and a 512 px maskable icon |
+| `graphics` | Share images as PNG: 1200 × 630 Open Graph, 1080 × 1080 square, 1500 × 500 header, a 1024 px profile picture and a 512 px maskable icon |
 
 The app keeps its own copies of the art it shows, including the mascot art, in [`src/AiGym/Assets`](../src/AiGym/Assets). The website is in [`site`](../site).
 

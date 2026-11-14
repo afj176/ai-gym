@@ -90,8 +90,9 @@ code { font-family: "Cascadia Code", Consolas, monospace; font-size: 0.9em; }
   border-bottom: 1px solid var(--line);
 }
 .top-inner { display: flex; align-items: center; gap: 16px; height: 60px; }
-.brand { display: flex; align-items: center; flex-shrink: 0; }
+.brand { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
 .brand img { height: 30px; width: auto; }
+.brand .brand-mascot { height: 36px; width: 36px; }
 .top nav { display: flex; gap: 4px; margin-left: auto; }
 .top nav a, .gh {
   color: var(--ink); text-decoration: none; font-weight: 600; font-size: 15px;
