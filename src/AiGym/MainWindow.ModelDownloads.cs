@@ -141,7 +141,7 @@ public sealed partial class MainWindow
         searchEmpty.View.Margin=new Thickness(12,56,12,20);var catalogBody=new Grid();catalogBody.Children.Add(catalog);catalogBody.Children.Add(searchEmpty.View);
         // While the first results are on their way, skeleton rows stand in for the catalog.
         var searchSkeleton=CardFrame(Stack(Fluent.Skeleton(.45,.8),Fluent.Skeleton(.35,.7),Fluent.Skeleton(.5,.75),Fluent.Skeleton(.4,.65)));((StackPanel)searchSkeleton.Child).Spacing=20;searchSkeleton.VerticalAlignment=VerticalAlignment.Top;searchSkeleton.Visibility=Visibility.Collapsed;catalogBody.Children.Add(searchSkeleton);
-        void SearchEmpty(string reaction,string title,string body,bool visible){PlayReaction(searchEmpty.Art,reaction);searchEmpty.Title.Text=title;searchEmpty.Body.Text=body;searchEmpty.View.Visibility=visible?Visibility.Visible:Visibility.Collapsed;}
+        void SearchEmpty(string mood,string title,string body,bool visible){PlayMascot(searchEmpty.Art,mood);searchEmpty.Title.Text=title;searchEmpty.Body.Text=body;searchEmpty.View.Visibility=visible?Visibility.Visible:Visibility.Collapsed;}
         var cTitle=Display(Text("Find your next model",23));cTitle.FontWeight=Microsoft.UI.Text.FontWeights.SemiBold;var cRepo=Text("Select a repository to inspect its downloadable files.",13);var cFacts=Text("",13);var cNote=Text("",12);
         var variants=new ComboBox{Header="Variant / files",HorizontalAlignment=HorizontalAlignment.Stretch};var cPath=new TextBox{Header="Download storage",IsReadOnly=true,TextWrapping=TextWrapping.Wrap};
         var fixedVariant=new TextBox{Header="Selected variant",IsReadOnly=true,TextWrapping=TextWrapping.Wrap};

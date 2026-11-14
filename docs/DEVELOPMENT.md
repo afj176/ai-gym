@@ -8,7 +8,7 @@
 | `scripts` | `Publish.ps1`, the Python helpers the app runs (`Train-LocalAdapter.py`, `Serve-Transformers.py`, `Setup-QuantizedRuntime.py`), the model adapter table and verification scripts. |
 | `tests` | Console check suites (no model, GPU or network needed). |
 | `packaging/AiGym.iss` | Inno Setup script used by `Publish.ps1 -Installer`. |
-| `brand` | Logo kit, tokens, avatars, social graphics and the Manrope licence. |
+| `brand` | Logo kit, tokens, character portraits, social graphics and the Manrope licence. |
 | `site` | The one-page website published to ai-gym.site. |
 
 ## Profile folder

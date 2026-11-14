@@ -116,7 +116,7 @@ public sealed partial class MainWindow
         var folderHost = new ContentControl { HorizontalContentAlignment = HorizontalAlignment.Stretch };
         var raw = MonoBlock("", 320);
         var rawExpander = new Expander { Header = "Raw evidence (JSON)", Content = raw, HorizontalAlignment = HorizontalAlignment.Stretch, HorizontalContentAlignment = HorizontalAlignment.Stretch };
-        var celebrate = Reaction("that-worked", 84);
+        var celebrate = Mascot("that-worked", 84);
         celebrate.Visibility = Visibility.Collapsed;
         celebrate.HorizontalAlignment = HorizontalAlignment.Right;
 
@@ -380,7 +380,7 @@ public sealed partial class MainWindow
             {
                 notify("Training completed. The adapter, checkpoints and metrics are retained in the evidence folder.", InfoBarSeverity.Success);
                 celebrate.Visibility = Visibility.Visible;
-                PlayReaction(celebrate, "that-worked", animate: true);
+                PlayMascot(celebrate, "that-worked", animate: true);
             }
         };
 

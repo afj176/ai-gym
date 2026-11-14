@@ -63,14 +63,14 @@ public sealed partial class MainWindow
         return control;
     }
 
-    // Reaction art shipped in Assets/Brand/reactions: a transparent still and a transparent GIF per reaction.
-    static readonly Dictionary<string, string> ReactionFiles = new()
+    // Mascot art shipped in Assets/Brand/mascot: a transparent still and a transparent GIF per mood.
+    static readonly Dictionary<string, string> MascotFiles = new()
     {
         ["you-got-this"] = "01-you-got-this", ["let-me-think"] = "02-let-me-think", ["that-worked"] = "03-that-worked",
         ["wait-a-second"] = "04-wait-a-second", ["im-listening"] = "05-im-listening", ["oh-wow"] = "06-oh-wow",
         ["try-again"] = "07-try-again", ["thank-you"] = "08-thank-you"
     };
-    static readonly Dictionary<string, string> ReactionAlt = new()
+    static readonly Dictionary<string, string> MascotAlt = new()
     {
         ["you-got-this"] = "Spring cheering you on", ["let-me-think"] = "Spring thinking it over", ["that-worked"] = "Spring celebrating",
         ["wait-a-second"] = "Spring asking you to wait a second", ["im-listening"] = "Spring listening", ["oh-wow"] = "Spring looking amazed",
@@ -86,43 +86,43 @@ public sealed partial class MainWindow
     }
 
     // The transparent light-mode still is used in both themes; it has no backdrop of its own.
-    static string ReactionStill(string name) => $"reactions/{ReactionFiles[name]}-light.png";
+    static string MascotStill(string name) => $"mascot/{MascotFiles[name]}-light.png";
 
     /// <summary>
     /// Spring reacting to a moment, as a transparent still;
-    /// <see cref="PlayReaction"/> can briefly swap in the animation.
+    /// <see cref="PlayMascot"/> can briefly swap in the animation.
     /// </summary>
-    static Image Reaction(string name, double size)
+    static Image Mascot(string name, double size)
     {
         var image = new Image { Width = size, Height = size, Stretch = Stretch.Uniform, Tag = name };
-        image.Source = BrandImage(ReactionStill(name), (int)size);
-        AutomationProperties.SetName(image, ReactionAlt[name]);
+        image.Source = BrandImage(MascotStill(name), (int)size);
+        AutomationProperties.SetName(image, MascotAlt[name]);
         return image;
     }
 
     /// <summary>
-    /// Changes the reaction shown by an image created with <see cref="Reaction"/>. When <paramref name="animate"/>
+    /// Changes the mood shown by an image created with <see cref="Mascot"/>. When <paramref name="animate"/>
     /// is set and Windows animations are enabled, the transparent GIF plays for a few seconds, then the still returns.
     /// </summary>
-    static void PlayReaction(Image image, string name, bool animate = false)
+    static void PlayMascot(Image image, string name, bool animate = false)
     {
         image.Tag = name;
-        AutomationProperties.SetName(image, ReactionAlt[name]);
+        AutomationProperties.SetName(image, MascotAlt[name]);
         int width = (int)image.Width;
-        if (!animate || !AnimationsEnabled()) { image.Source = BrandImage(ReactionStill(name), width); return; }
-        image.Source = BrandImage($"reactions/{ReactionFiles[name]}-transparent.gif", width);
+        if (!animate || !AnimationsEnabled()) { image.Source = BrandImage(MascotStill(name), width); return; }
+        image.Source = BrandImage($"mascot/{MascotFiles[name]}-transparent.gif", width);
         var timer = image.DispatcherQueue.CreateTimer();
         timer.Interval = TimeSpan.FromSeconds(3.5);
         timer.IsRepeating = false;
-        // Only settle if no newer reaction replaced this one in the meantime.
-        timer.Tick += (_, _) => { if ((string)image.Tag == name) image.Source = BrandImage(ReactionStill(name), width); };
+        // Only settle if no newer mood replaced this one in the meantime.
+        timer.Tick += (_, _) => { if ((string)image.Tag == name) image.Source = BrandImage(MascotStill(name), width); };
         timer.Start();
     }
 
     /// <summary>One character moment plus a plain statement of what is missing and what to do next.</summary>
-    static (FrameworkElement View, Image Art, TextBlock Title, TextBlock Body) EmptyState(string reaction, string title, string body, params UIElement[] actions)
+    static (FrameworkElement View, Image Art, TextBlock Title, TextBlock Body) EmptyState(string mood, string title, string body, params UIElement[] actions)
     {
-        var art = Reaction(reaction, 132);
+        var art = Mascot(mood, 132);
         var heading = Heading(title, 20);
         heading.TextAlignment = TextAlignment.Center;
         heading.HorizontalAlignment = HorizontalAlignment.Center;

@@ -1,6 +1,6 @@
 # AI Gym brand guide
 
-<img src="avatars/01-spring.png" alt="Spring, a mint-green flying squirrel with one paw raised" width="180" align="right">
+<img src="characters/01-spring.png" alt="Spring, a mint-green flying squirrel with one paw raised" width="180" align="right">
 
 AI Gym is a Windows app for practising with local AI: shape a dataset, train an adapter, compare held-out answers from two models and keep the evidence on your own PC. The identity is about repetition that leads somewhere. The logo is an open G, a loop that ends in a small lifted square, and the tagline finishes the thought: **Practice makes possibility.**
 
@@ -15,22 +15,22 @@ AI Gym is a Windows app for practising with local AI: shape a dataset, train an 
 
 Four companions share the same clay and colours. **Ripple** the axolotl is quietly observant, **Tempo** the owl is patient and methodical, **Pivot** the turtle is thoughtful and resourceful, and **Zip** the rabbit is playful and hard to discourage.
 
-<img src="avatars/01-spring.png" alt="Spring" width="88"> <img src="avatars/02-ripple.png" alt="Ripple" width="88"> <img src="avatars/03-tempo.png" alt="Tempo" width="88"> <img src="avatars/04-pivot.png" alt="Pivot" width="88"> <img src="avatars/05-zip.png" alt="Zip" width="88">
+<img src="characters/01-spring.png" alt="Spring" width="88"> <img src="characters/02-ripple.png" alt="Ripple" width="88"> <img src="characters/03-tempo.png" alt="Tempo" width="88"> <img src="characters/04-pivot.png" alt="Pivot" width="88"> <img src="characters/05-zip.png" alt="Zip" width="88">
 
 Where Spring appears in the app:
 
 - **Title bar and app icon.** Inside the app Spring is the logo: a 32 px Spring sits next to the wordmark, and the taskbar icon is Spring too.
 - **Home.** Spring cheers beside the tagline ("You got this") and shrinks when the window is narrow.
-- **Empty states.** A reaction sits above a short title and one next step. "You got this" invites a start, "I'm listening" waits for a file or a search, and "Let me think" marks a comparison or an experiment that has not been opened.
+- **Empty states.** Spring sits above a short title and one next step. "You got this" invites a start, "I'm listening" waits for a file or a search, and "Let me think" marks a comparison or an experiment that has not been opened.
 - **Results.** "That worked" plays once as a short animation when an export or a training run finishes, then settles to a still. "Try again" replaces the artwork when something fails. If animations are turned off in Windows, only the stills are shown.
 
-Eight reactions ship with the app; the pages use five of them today. The companions are for profiles, documentation and community spaces, and do not appear in the app.
+Eight pieces of mascot art ship with the app, one for each of Spring's moods; the pages use five of them today. The companions are for profiles, documentation and community spaces, and do not appear in the app.
 
 Please don't:
 
 - Put Spring on the working surfaces, such as charts, tables and training logs.
 - Let Spring claim a result. A celebration appears only after something has actually finished.
-- Recolour Spring, crop the ears or tail, or place the round avatars on a busy background.
+- Recolour Spring, crop the ears or tail, or place the round portraits on a busy background.
 - Loop the animations. Each one plays once.
 
 ## Logo
@@ -113,10 +113,10 @@ Say what is saved, where it goes and what still needs your approval. A saved con
 | `logo-kit/favicon` | Favicons, touch icons and a web manifest |
 | `logo-kit/preview` | The logo usage sheet |
 | `logo-kit/fonts` | Manrope and its licence |
-| `avatars` | Spring and the four companions on round backdrops, 512 px |
+| `characters` | Spring and the four companions on round backdrops, 512 px |
 | `graphics` | Share images as SVG and PNG: 1200 × 630 Open Graph, 1080 × 1080 square, 1500 × 500 header, a 1024 px profile picture and a 512 px maskable icon |
 
-The app keeps its own copies of the art it shows, including the reactions, in [`src/AiGym/Assets`](../src/AiGym/Assets). The website is in [`site`](../site).
+The app keeps its own copies of the art it shows, including the mascot art, in [`src/AiGym/Assets`](../src/AiGym/Assets). The website is in [`site`](../site).
 
 ## Licence
 

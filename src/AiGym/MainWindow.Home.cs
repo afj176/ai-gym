@@ -68,7 +68,7 @@ public sealed partial class MainWindow
     FrameworkElement BuildGymHome()
     {
         // Hero: Spring, the tagline and one suggested next step derived from what is saved.
-        var spring = Reaction("you-got-this", 168);
+        var spring = Mascot("you-got-this", 168);
         var tagline = Heading("Practice makes possibility.", 38);
         tagline.LineHeight = 44;
         var bio = Muted("A place to practice with local AI. Shape a dataset, train an adapter, compare held-out results, and keep the evidence close.", 15);

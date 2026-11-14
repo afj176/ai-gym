@@ -119,7 +119,7 @@ public sealed partial class MainWindow
         var export = Button("Export training bundle", (_, _) => { }, true);
         var exportReason = Muted("", 12);
         var exportResult = new ContentControl { HorizontalContentAlignment = HorizontalAlignment.Stretch, Visibility = Visibility.Collapsed };
-        var celebrate = Reaction("that-worked", 96);
+        var celebrate = Mascot("that-worked", 96);
         celebrate.Visibility = Visibility.Collapsed;
         var exportRow = new Grid { ColumnSpacing = 16 };
         exportRow.ColumnDefinitions.Add(new() { Width = new GridLength(1, GridUnitType.Star) });
@@ -263,13 +263,13 @@ public sealed partial class MainWindow
                 Refresh();
                 list.SelectedItem = list.Items.OfType<ListViewItem>().Single(x => ((GymDataset)x.Tag).Id == data.Id);
                 refreshGymDatasets?.Invoke();
-                PlayReaction(empty.Art, "im-listening");
+                PlayMascot(empty.Art, "im-listening");
                 notify($"Imported {data.Examples.Length:N0} examples from {Path.GetFileName(path)}. Review them before approving export.", InfoBarSeverity.Success);
             }
             catch (Exception e)
             {
                 notify(e.Message, InfoBarSeverity.Error);
-                PlayReaction(empty.Art, "try-again");
+                PlayMascot(empty.Art, "try-again");
             }
         }
 
@@ -310,7 +310,7 @@ public sealed partial class MainWindow
                 exportResult.Content = ValueRow("Training bundle exported to", path, folder: true);
                 exportResult.Visibility = Visibility.Visible;
                 celebrate.Visibility = Visibility.Visible;
-                PlayReaction(celebrate, "that-worked", animate: true);
+                PlayMascot(celebrate, "that-worked", animate: true);
                 notify("Training bundle exported. Use this folder as the reviewed bundle in Training lab.", InfoBarSeverity.Success);
             }
             catch (Exception e) { notify(e.Message, InfoBarSeverity.Error); }

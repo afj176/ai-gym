@@ -77,7 +77,7 @@ public sealed partial class MainWindow
         notify = (message, severity) =>
         {
             plainNotify(message, severity);
-            if (severity == InfoBarSeverity.Error) PlayReaction(empty.Art, "try-again");
+            if (severity == InfoBarSeverity.Error) PlayMascot(empty.Art, "try-again");
         };
         // While the planning model works on a first plan, proposed steps appear as skeletons under Spring's thinking face.
         FrameworkElement StepSkeleton(double title) => Surface(new StackPanel { Spacing = 12, Children = { Fluent.Skeleton(title, .3), Surface(Fluent.Skeleton(.6, .9, .45), "GymSurfaceAltBrush", 8, 12, border: false) } }, "GymSurfaceBrush", 14, 16);
@@ -177,7 +177,7 @@ public sealed partial class MainWindow
             approvalCard.Visibility = next == null ? Visibility.Collapsed : Visibility.Visible;
             if (next == null)
             {
-                var done = Reaction("that-worked", 96);
+                var done = Mascot("that-worked", 96);
                 var text = new StackPanel { Spacing = 4, VerticalAlignment = VerticalAlignment.Center, Children = { Heading("Experiment completed", 17), Muted("Every step ran after your review. Open a step's result data for the retained output.", 13) } };
                 var row = new StackPanel { Orientation = Orientation.Horizontal, Spacing = 16, Children = { done, text } };
                 steps.Children.Add(Surface(row, "GymTintBrush", 14, 14, border: false));
@@ -253,7 +253,7 @@ public sealed partial class MainWindow
         plan.Click += async (_, _) =>
         {
             planning = true;
-            PlayReaction(empty.Art, "let-me-think", animate: true);
+            PlayMascot(empty.Art, "let-me-think", animate: true);
             await GymRun(notify, async ct =>
             {
                 if (models.SelectedItem is not AiEndpointProfile profile) throw new ArgumentException("Choose a planning model first.");

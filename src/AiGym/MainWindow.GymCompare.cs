@@ -79,7 +79,7 @@ public sealed partial class MainWindow
         notify = (message, severity) =>
         {
             plainNotify(message, severity);
-            if (severity == InfoBarSeverity.Error) PlayReaction(empty.Art, "try-again");
+            if (severity == InfoBarSeverity.Error) PlayMascot(empty.Art, "try-again");
         };
         var evidence = StepCard("Step 2", "Read the evidence", "Responses and observed client latency for each held-out example. Exact matches are not a general quality score.", saved, results, empty.View);
         results.Visibility = Visibility.Collapsed;
