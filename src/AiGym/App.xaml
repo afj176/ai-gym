@@ -1,0 +1,93 @@
+<Application x:Class="AiGym.App" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+ <Application.Resources>
+  <ResourceDictionary>
+   <ResourceDictionary.MergedDictionaries><XamlControlsResources xmlns="using:Microsoft.UI.Xaml.Controls"/></ResourceDictionary.MergedDictionaries>
+   <ResourceDictionary.ThemeDictionaries>
+    <ResourceDictionary x:Key="Light">
+     <!-- AI Gym brand tokens (brand/tokens.json), light theme. -->
+     <SolidColorBrush x:Key="GymPageBrush" Color="#F4F8F6"/>
+     <SolidColorBrush x:Key="GymSurfaceBrush" Color="#FFFFFF"/>
+     <SolidColorBrush x:Key="GymSurfaceAltBrush" Color="#EAF2EE"/>
+     <SolidColorBrush x:Key="GymInkBrush" Color="#102C2B"/>
+     <SolidColorBrush x:Key="GymMutedBrush" Color="#405F5D"/>
+     <SolidColorBrush x:Key="GymAccentBrush" Color="#006B58"/>
+     <SolidColorBrush x:Key="GymOnAccentBrush" Color="#FFFFFF"/>
+     <SolidColorBrush x:Key="GymBorderBrush" Color="#4D667F79"/>
+     <SolidColorBrush x:Key="GymStrongBorderBrush" Color="#667F79"/>
+     <SolidColorBrush x:Key="GymTintBrush" Color="#1F006B58"/>
+     <SolidColorBrush x:Key="GymHoverBrush" Color="#F0F7F4"/>
+     <SolidColorBrush x:Key="GymPressedBrush" Color="#E2EEE9"/>
+     <SolidColorBrush x:Key="GymWarnBrush" Color="#7A4E00"/>
+     <SolidColorBrush x:Key="GymWarnTintBrush" Color="#33E9B949"/>
+     <SolidColorBrush x:Key="GymDangerBrush" Color="#A3302B"/>
+     <SolidColorBrush x:Key="GymDangerTintBrush" Color="#1FA3302B"/>
+     <SolidColorBrush x:Key="GymHeldOutBrush" Color="#C98A1B"/>
+
+<SolidColorBrush x:Key="AccentButtonBackground" Color="#006B58"/><SolidColorBrush x:Key="CheckBoxCheckBackgroundFillChecked" Color="#006B58"/><SolidColorBrush x:Key="CheckBoxCheckBackgroundStrokeChecked" Color="#006B58"/><SolidColorBrush x:Key="CheckBoxCheckBackgroundFillIndeterminate" Color="#006B58"/><SolidColorBrush x:Key="CheckBoxCheckBackgroundStrokeIndeterminate" Color="#006B58"/><SolidColorBrush x:Key="AccentButtonBackgroundPointerOver" Color="#005B4B"/><SolidColorBrush x:Key="AccentButtonBackgroundPressed" Color="#004C3E"/><SolidColorBrush x:Key="AccentButtonForeground" Color="#FFFFFF"/><SolidColorBrush x:Key="AccentButtonForegroundPointerOver" Color="#FFFFFF"/><SolidColorBrush x:Key="AccentButtonForegroundPressed" Color="#FFFFFF"/><SolidColorBrush x:Key="CheckBoxCheckGlyphForegroundChecked" Color="#FFFFFF"/>
+     <Color x:Key="SystemAccentColor">#006B58</Color>
+<SolidColorBrush x:Key="ToggleButtonBackgroundChecked" Color="#006B58"/><SolidColorBrush x:Key="ToggleButtonBackgroundCheckedPointerOver" Color="#006B58"/><SolidColorBrush x:Key="ToggleButtonBackgroundCheckedPressed" Color="#006B58"/><SolidColorBrush x:Key="ProgressBarForeground" Color="#006B58"/><SolidColorBrush x:Key="TextControlBorderBrushFocused" Color="#006B58"/><SolidColorBrush x:Key="ListViewItemSelectionIndicatorBrush" Color="#006B58"/><SolidColorBrush x:Key="ToggleButtonForegroundChecked" Color="#FFFFFF"/><SolidColorBrush x:Key="ToggleButtonForegroundCheckedPointerOver" Color="#FFFFFF"/><SolidColorBrush x:Key="ToggleButtonForegroundCheckedPressed" Color="#FFFFFF"/>
+     <SolidColorBrush x:Key="AccentFillColorDefaultBrush" Color="#006B58"/>
+     <SolidColorBrush x:Key="AccentFillColorSecondaryBrush" Color="#005B4B"/>
+     <SolidColorBrush x:Key="AccentFillColorTertiaryBrush" Color="#004C3E"/>
+     <SolidColorBrush x:Key="AccentTextFillColorPrimaryBrush" Color="#006B58"/>
+     <SolidColorBrush x:Key="TextOnAccentFillColorPrimaryBrush" Color="#FFFFFF"/>
+    </ResourceDictionary>
+    <ResourceDictionary x:Key="Default">
+     <!-- AI Gym brand tokens (brand/tokens.json), dark theme. -->
+     <SolidColorBrush x:Key="GymPageBrush" Color="#0B2020"/>
+     <SolidColorBrush x:Key="GymSurfaceBrush" Color="#153332"/>
+     <SolidColorBrush x:Key="GymSurfaceAltBrush" Color="#0F2828"/>
+     <SolidColorBrush x:Key="GymInkBrush" Color="#F4F8F6"/>
+     <SolidColorBrush x:Key="GymMutedBrush" Color="#B7D2CB"/>
+     <SolidColorBrush x:Key="GymAccentBrush" Color="#76E4C0"/>
+     <SolidColorBrush x:Key="GymOnAccentBrush" Color="#0B2020"/>
+     <SolidColorBrush x:Key="GymBorderBrush" Color="#33B7D2CB"/>
+     <SolidColorBrush x:Key="GymStrongBorderBrush" Color="#B7D2CB"/>
+     <SolidColorBrush x:Key="GymTintBrush" Color="#2976E4C0"/>
+     <SolidColorBrush x:Key="GymHoverBrush" Color="#1B3F3D"/>
+     <SolidColorBrush x:Key="GymPressedBrush" Color="#113030"/>
+     <SolidColorBrush x:Key="GymWarnBrush" Color="#F2CC7A"/>
+     <SolidColorBrush x:Key="GymWarnTintBrush" Color="#33F2CC7A"/>
+     <SolidColorBrush x:Key="GymDangerBrush" Color="#FFA59E"/>
+     <SolidColorBrush x:Key="GymDangerTintBrush" Color="#33FFA59E"/>
+     <SolidColorBrush x:Key="GymHeldOutBrush" Color="#F2CC7A"/>
+
+<SolidColorBrush x:Key="AccentButtonBackground" Color="#76E4C0"/><SolidColorBrush x:Key="CheckBoxCheckBackgroundFillChecked" Color="#76E4C0"/><SolidColorBrush x:Key="CheckBoxCheckBackgroundStrokeChecked" Color="#76E4C0"/><SolidColorBrush x:Key="CheckBoxCheckBackgroundFillIndeterminate" Color="#76E4C0"/><SolidColorBrush x:Key="CheckBoxCheckBackgroundStrokeIndeterminate" Color="#76E4C0"/><SolidColorBrush x:Key="AccentButtonBackgroundPointerOver" Color="#66D4B0"/><SolidColorBrush x:Key="AccentButtonBackgroundPressed" Color="#56C4A0"/><SolidColorBrush x:Key="AccentButtonForeground" Color="#0B2020"/><SolidColorBrush x:Key="AccentButtonForegroundPointerOver" Color="#0B2020"/><SolidColorBrush x:Key="AccentButtonForegroundPressed" Color="#0B2020"/><SolidColorBrush x:Key="CheckBoxCheckGlyphForegroundChecked" Color="#0B2020"/>
+     <Color x:Key="SystemAccentColor">#76E4C0</Color>
+<SolidColorBrush x:Key="ToggleButtonBackgroundChecked" Color="#76E4C0"/><SolidColorBrush x:Key="ToggleButtonBackgroundCheckedPointerOver" Color="#76E4C0"/><SolidColorBrush x:Key="ToggleButtonBackgroundCheckedPressed" Color="#76E4C0"/><SolidColorBrush x:Key="ProgressBarForeground" Color="#76E4C0"/><SolidColorBrush x:Key="TextControlBorderBrushFocused" Color="#76E4C0"/><SolidColorBrush x:Key="ListViewItemSelectionIndicatorBrush" Color="#76E4C0"/><SolidColorBrush x:Key="ToggleButtonForegroundChecked" Color="#102C2B"/><SolidColorBrush x:Key="ToggleButtonForegroundCheckedPointerOver" Color="#102C2B"/><SolidColorBrush x:Key="ToggleButtonForegroundCheckedPressed" Color="#102C2B"/>
+     <SolidColorBrush x:Key="AccentFillColorDefaultBrush" Color="#76E4C0"/>
+     <SolidColorBrush x:Key="AccentFillColorSecondaryBrush" Color="#66D4B0"/>
+     <SolidColorBrush x:Key="AccentFillColorTertiaryBrush" Color="#56C4A0"/>
+     <SolidColorBrush x:Key="AccentTextFillColorPrimaryBrush" Color="#76E4C0"/>
+     <SolidColorBrush x:Key="TextOnAccentFillColorPrimaryBrush" Color="#0B2020"/>
+    </ResourceDictionary>
+    <ResourceDictionary x:Key="HighContrast">
+     <!-- High contrast: every brand role defers to the Windows contrast theme. -->
+     <SolidColorBrush x:Key="GymPageBrush" Color="{ThemeResource SystemColorWindowColor}"/>
+     <SolidColorBrush x:Key="GymSurfaceBrush" Color="{ThemeResource SystemColorWindowColor}"/>
+     <SolidColorBrush x:Key="GymSurfaceAltBrush" Color="{ThemeResource SystemColorWindowColor}"/>
+     <SolidColorBrush x:Key="GymInkBrush" Color="{ThemeResource SystemColorWindowTextColor}"/>
+     <SolidColorBrush x:Key="GymMutedBrush" Color="{ThemeResource SystemColorWindowTextColor}"/>
+     <SolidColorBrush x:Key="GymAccentBrush" Color="{ThemeResource SystemColorHighlightColor}"/>
+     <SolidColorBrush x:Key="GymOnAccentBrush" Color="{ThemeResource SystemColorHighlightTextColor}"/>
+     <SolidColorBrush x:Key="GymBorderBrush" Color="{ThemeResource SystemColorWindowTextColor}"/>
+     <SolidColorBrush x:Key="GymStrongBorderBrush" Color="{ThemeResource SystemColorWindowTextColor}"/>
+     <SolidColorBrush x:Key="GymTintBrush" Color="{ThemeResource SystemColorWindowColor}"/>
+     <SolidColorBrush x:Key="GymHoverBrush" Color="{ThemeResource SystemColorHighlightColor}"/>
+     <SolidColorBrush x:Key="GymPressedBrush" Color="{ThemeResource SystemColorHighlightColor}"/>
+     <SolidColorBrush x:Key="GymWarnBrush" Color="{ThemeResource SystemColorWindowTextColor}"/>
+     <SolidColorBrush x:Key="GymWarnTintBrush" Color="{ThemeResource SystemColorWindowColor}"/>
+     <SolidColorBrush x:Key="GymDangerBrush" Color="{ThemeResource SystemColorWindowTextColor}"/>
+     <SolidColorBrush x:Key="GymDangerTintBrush" Color="{ThemeResource SystemColorWindowColor}"/>
+     <SolidColorBrush x:Key="GymHeldOutBrush" Color="{ThemeResource SystemColorWindowTextColor}"/>
+    </ResourceDictionary>
+   </ResourceDictionary.ThemeDictionaries>
+<!-- Brand radius-small (8) for controls and flyouts. -->
+<CornerRadius x:Key="ControlCornerRadius">8</CornerRadius>
+<CornerRadius x:Key="OverlayCornerRadius">12</CornerRadius>
+<Style TargetType="TabView"><Setter Property="Background" Value="{ThemeResource TabViewBackground}"/></Style>
+<Style TargetType="TabViewItem"><Setter Property="UseSystemFocusVisuals" Value="True"/><Setter Property="MinHeight" Value="44"/><Setter Property="FontSize" Value="14"/><Setter Property="FontWeight" Value="Normal"/><Setter Property="BorderThickness" Value="0"/></Style>
+  </ResourceDictionary>
+ </Application.Resources>
+</Application>
+

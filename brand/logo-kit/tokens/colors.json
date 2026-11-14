@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "brand": "AI Gym",
+  "colors": {
+    "paper": {
+      "value": "#F4F8F6",
+      "role": "paper"
+    },
+    "white": {
+      "value": "#FFFFFF",
+      "role": "white"
+    },
+    "ink": {
+      "value": "#102C2B",
+      "role": "ink"
+    },
+    "muted": {
+      "value": "#405F5D",
+      "role": "muted"
+    },
+    "accent": {
+      "value": "#006B58",
+      "role": "accent"
+    },
+    "night": {
+      "value": "#0B2020",
+      "role": "night"
+    },
+    "raised": {
+      "value": "#153332",
+      "role": "raised"
+    },
+    "silver": {
+      "value": "#B7D2CB",
+      "role": "silver"
+    },
+    "bright": {
+      "value": "#76E4C0",
+      "role": "bright"
+    },
+    "line": {
+      "value": "#667F79",
+      "role": "line"
+    }
+  },
+  "presentation": {
+    "canvas": "#FFFFFF",
+    "ink": "#0B2020",
+    "on_dark": "#FFFFFF",
+    "accent": "#F4F8F6",
+    "icon_background": "#FFFFFF",
+    "theme_color": "#0B2020"
+  },
+  "typography": {
+    "logo": "Manrope 750, outlined with HarfBuzz. Do not retype the logo.",
+    "supporting_family": "Manrope",
+    "usage": "Manrope for identity; Windows system font for application controls.",
+    "fonts": [
+      {
+        "family": "Manrope",
+        "source": "fonts/Manrope[wght].ttf",
+        "license": "SIL Open Font License 1.1",
+        "license_source": "fonts/LICENSE-Manrope.txt",
+        "redistribution_permitted": true
+      }
+    ]
+  }
+}

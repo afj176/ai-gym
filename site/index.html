@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Gym · Practice makes possibility</title>
+<meta name="description" content="AI Gym is a free Windows app for practising with local AI: review JSONL datasets, train LoRA adapters on your own PC, and compare held-out answers from two models, with every result kept on your PC.">
+<link rel="canonical" href="https://ai-gym.site/">
+<meta name="theme-color" content="#F4F8F6" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0B2020" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light dark">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="AI Gym">
+<meta property="og:title" content="AI Gym · Practice makes possibility">
+<meta property="og:description" content="Local AI practice for Windows: datasets, LoRA training and side-by-side model comparisons that stay on your PC.">
+<meta property="og:url" content="https://ai-gym.site/">
+<meta property="og:image" content="https://ai-gym.site/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Spring the flying squirrel next to the AI Gym Home screen">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI Gym · Practice makes possibility">
+<meta name="twitter:description" content="Local AI practice for Windows: datasets, LoRA training and side-by-side model comparisons that stay on your PC.">
+<meta name="twitter:image" content="https://ai-gym.site/assets/og-image.png">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="preload" href="assets/fonts/Manrope.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="stylesheet" href="styles.css">
+<script src="app.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="top">
+  <div class="wrap top-inner">
+    <a class="brand" href="#top" aria-label="AI Gym, back to top">
+      <picture>
+        <source srcset="assets/wordmark-dark.png" media="(prefers-color-scheme: dark)">
+        <img src="assets/wordmark-light.png" alt="AI Gym" width="300" height="89">
+      </picture>
+    </a>
+    <nav aria-label="Sections">
+      <a href="#features">Features</a>
+      <a href="#screenshots">Screenshots</a>
+      <a href="#download">Download</a>
+    </nav>
+    <a class="gh" href="https://github.com/afj176/ai-gym">
+      <svg viewBox="0 0 16 16" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8a8 8 0 0 0 5.47 7.59c.4.07.55-.17.55-.38v-1.33c-2.23.48-2.7-1.07-2.7-1.07-.36-.92-.89-1.17-.89-1.17-.73-.5.06-.49.06-.49.8.06 1.23.82 1.23.82.72 1.22 1.87.87 2.33.66.07-.52.28-.87.5-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.6 7.6 0 0 1 4 0c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48v2.2c0 .21.15.46.55.38A8 8 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+      <span>GitHub</span>
+    </a>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero" id="top" aria-labelledby="hero-title">
+    <div class="wrap hero-grid">
+      <img class="spring" src="assets/spring.png" alt="Spring, AI Gym's mint flying squirrel, cheering" width="320" height="320">
+      <div class="hero-copy">
+        <p class="eyebrow">Local AI practice for Windows</p>
+        <h1 id="hero-title">Practice makes possibility.</h1>
+        <p class="lede">Shape a dataset, train an adapter, compare held-out answers from two models, and keep the evidence on your own PC.</p>
+        <div class="ctas">
+          <a class="btn primary" href="https://github.com/afj176/ai-gym/releases/latest/download/AiGym-Setup-x64.exe">
+            <svg viewBox="0 0 20 20" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M10 2a1 1 0 0 1 1 1v8.59l2.3-2.3a1 1 0 1 1 1.4 1.42l-4 4a1 1 0 0 1-1.4 0l-4-4a1 1 0 1 1 1.4-1.42L9 11.6V3a1 1 0 0 1 1-1ZM4 16a1 1 0 1 0 0 2h12a1 1 0 1 0 0-2H4Z"/></svg>
+            Download for Windows
+          </a>
+          <a class="btn secondary" href="https://github.com/afj176/ai-gym/releases/latest/download/AiGym-win-x64.zip">Portable ZIP</a>
+        </div>
+        <p class="fine">Version <span data-version>1.8.1</span> · Installer <span data-size="setup">91 MB</span> · ZIP <span data-size="zip">105 MB</span> · Windows x64 · free</p>
+      </div>
+    </div>
+    <div class="wrap">
+      <figure class="hero-shot">
+        <picture>
+          <source srcset="assets/home-dark.png" media="(prefers-color-scheme: dark)">
+          <img src="assets/home-light.png" alt="AI Gym Home: Spring's banner above the practice loop, with 3 datasets, 2 training runs and 3 saved model connections" width="1600" height="1001" fetchpriority="high">
+        </picture>
+      </figure>
+    </div>
+  </section>
+
+  <section class="section" id="features" aria-labelledby="features-title">
+    <div class="wrap">
+      <p class="eyebrow">What it does</p>
+      <h2 id="features-title">One practice loop, all on your machine</h2>
+      <ul class="cards" role="list">
+        <li class="card">
+          <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 3h7l5 5v12a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></svg></span>
+          <h3>Datasets you have actually read</h3>
+          <p>Import JSONL conversations and page through every example. A fixed 80/20 split keeps each entity's examples on one side, and export waits until you approve the review.</p>
+        </li>
+        <li class="card">
+          <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 20h18M4 16l4-6 4 3 4-7 4 5"/></svg></span>
+          <h3>LoRA training you can stop and resume</h3>
+          <p>Train an adapter on a local Transformers model with your own Python. Watch training and held-out loss, stop at a checkpoint, carry on later.</p>
+        </li>
+        <li class="card">
+          <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 8h13l-3-3M20 16H7l3 3"/></svg></span>
+          <h3>Side-by-side comparisons</h3>
+          <p>Send the same held-out prompts to two saved models. Both answers, exact matches and measured latency go into an evidence file you can reopen any time.</p>
+        </li>
+        <li class="card">
+          <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="6" rx="2"/><rect x="4" y="14" width="16" height="6" rx="2"/><path d="M8 7h.01M8 17h.01"/></svg></span>
+          <h3>Your models, your runtimes</h3>
+          <p>Scan folders for GGUF and Transformers models, start them with llama.cpp or Python, download from Hugging Face, or connect to a server already running on localhost.</p>
+        </li>
+        <li class="card">
+          <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="5" y="8" width="14" height="11" rx="3"/><path d="M12 4v4M9.5 13h.01M14.5 13h.01M10 16h4"/></svg></span>
+          <h3>Agent lab with a review gate</h3>
+          <p>A local chat model plans a small experiment from a fixed set of tools. Nothing runs until you approve each step.</p>
+        </li>
+        <li class="card">
+          <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3 5 6v5c0 4.5 3 8.3 7 10 4-1.7 7-5.5 7-10V6l-7-3Z"/><path d="m9 12 2 2 4-4"/></svg></span>
+          <h3>Private by default</h3>
+          <p>Everything is plain files in your profile folder, and model connections must stay on your own PC. AI Gym goes online only when you search for or download a model, or set up an optional runtime.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section alt" id="screenshots" aria-labelledby="shots-title">
+    <div class="wrap">
+      <p class="eyebrow">Screenshots</p>
+      <h2 id="shots-title">A closer look</h2>
+      <div class="gallery">
+        <figure class="shot wide">
+          <img src="assets/compare.png" alt="Compare models: 0 of 10 exact matches for the base model, 7 of 10 for the model with the support adapter, a latency bar chart and the first example's answers side by side" width="1600" height="1001" loading="lazy" decoding="async">
+          <figcaption><strong>Compare models.</strong> The base model against the same model with a trained adapter, on ten held-out prompts.</figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="assets/training.png" alt="Training lab: a completed 240-step run with its settings, final loss and a falling loss chart" width="1600" height="1086" loading="lazy" decoding="async">
+          <figcaption><strong>Training lab.</strong> A finished run, its settings and its loss curve.</figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="assets/datasets.png" alt="Datasets: a 48-example dataset with its train and held-out split, source fingerprint and an example conversation" width="1600" height="1001" loading="lazy" decoding="async">
+          <figcaption><strong>Datasets.</strong> The split, the source fingerprint and every conversation.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="download" aria-labelledby="download-title">
+    <div class="wrap">
+      <div class="download">
+        <div>
+          <p class="eyebrow">Download</p>
+          <h2 id="download-title">Get AI Gym <span data-version>1.8.1</span></h2>
+          <p>Free for Windows x64. Pick the installer for a normal per-user install, or the ZIP to run it from any folder.</p>
+          <div class="ctas">
+            <a class="btn primary" href="https://github.com/afj176/ai-gym/releases/latest/download/AiGym-Setup-x64.exe">
+              <svg viewBox="0 0 20 20" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M10 2a1 1 0 0 1 1 1v8.59l2.3-2.3a1 1 0 1 1 1.4 1.42l-4 4a1 1 0 0 1-1.4 0l-4-4a1 1 0 1 1 1.4-1.42L9 11.6V3a1 1 0 0 1 1-1ZM4 16a1 1 0 1 0 0 2h12a1 1 0 1 0 0-2H4Z"/></svg>
+              Download for Windows
+            </a>
+            <a class="btn secondary" href="https://github.com/afj176/ai-gym/releases/latest/download/AiGym-win-x64.zip">Portable ZIP</a>
+          </div>
+          <p class="fine">Installer <span data-size="setup">91 MB</span> · ZIP <span data-size="zip">105 MB</span> · <a href="https://github.com/afj176/ai-gym/releases">All releases</a></p>
+        </div>
+        <dl class="reqs">
+          <div><dt>Windows</dt><dd>Windows 11 x64 for the installer. The portable ZIP also runs on Windows 10 version 2004 or later.</dd></div>
+          <div><dt>Models</dt><dd>Bring your own. Point AI Gym at GGUF or Transformers models, with llama.cpp's <code>llama-server</code> and/or Python (PyTorch, Transformers, PEFT) for training. Nothing is bundled.</dd></div>
+          <div><dt>First run</dt><dd>Builds are not code-signed yet, so SmartScreen may warn. Choose <strong>More info → Run anyway</strong>.</dd></div>
+          <div><dt>Checksums</dt><dd>SHA-256 files are attached to each release.</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-inner">
+    <div>
+      <p><a href="https://github.com/afj176/ai-gym">github.com/afj176/ai-gym</a></p>
+      <p class="muted">Made for Windows 11 · License: to be decided</p>
+    </div>
+    <nav aria-label="Sibling apps" class="siblings">
+      <a href="https://dbcowboy.site">DB Cowboy</a>
+      <span aria-hidden="true">·</span>
+      <a href="https://ai-gym.site" aria-current="page">AI Gym</a>
+      <span aria-hidden="true">·</span>
+      <a href="https://masonagent.site">Mason Agent</a>
+    </nav>
+  </div>
+</footer>
+</body>
+</html>
