@@ -89,7 +89,7 @@ public sealed partial class MainWindow
     static string MascotStill(string name) => $"mascot/{MascotFiles[name]}-light.png";
 
     /// <summary>
-    /// Spring reacting to a moment, as a transparent still;
+    /// Spring in one of its moods, as a transparent still;
     /// <see cref="PlayMascot"/> can briefly swap in the animation.
     /// </summary>
     static Image Mascot(string name, double size)

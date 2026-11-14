@@ -72,7 +72,7 @@ public sealed partial class MainWindow
             Children = { new StackPanel { Spacing = 4, Children = { new StackPanel { Orientation = Orientation.Horizontal, Spacing = 10, Children = { runState, runTitle } }, binding } }, steps, approvalCard }
         };
         var empty = EmptyState("let-me-think", "No experiment open", "Propose a plan above, or open a saved experiment. Each proposed step shows its tool and exact arguments before anything runs.");
-        // Spring reacts on the empty panel: thinking while the model plans, encouraging after a failure.
+        // Spring changes mood on the empty panel: thinking while the model plans, encouraging after a failure.
         var plainNotify = notify;
         notify = (message, severity) =>
         {
