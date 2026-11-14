@@ -77,8 +77,8 @@ dotnet build src\AiGym\AiGym.csproj -c Debug -p:Platform=x64
 .\src\AiGym\bin\x64\Debug\net10.0-windows10.0.19041.0\win-x64\AiGym.exe
 
 # Self-contained release folder + ZIP in artifacts\ (add the installer with -Installer)
-.\scripts\Publish.ps1 -Version 1.8.1
-.\scripts\Publish.ps1 -Version 1.8.1 -Installer -InnoCompiler "C:\Program Files (x86)\Inno Setup 6\ISCC.exe"
+.\scripts\Publish.ps1 -Version 1.8.2
+.\scripts\Publish.ps1 -Version 1.8.2 -Installer -InnoCompiler "C:\Program Files (x86)\Inno Setup 6\ISCC.exe"
 ```
 
 `Publish.ps1` refuses to overwrite an existing version and writes a SHA-256 inventory of the payload.
