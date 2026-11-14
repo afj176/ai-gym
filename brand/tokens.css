@@ -1,69 +1,70 @@
-/* Generated from brand-contract.json; explicit theme overrides system. */
+/* AI Gym brand tokens. The same values as tokens.json.
+   Dark applies with the system setting, or when data-theme="dark" is set on the root element. */
 :root {
   --palette-paper: #F4F8F6;
   --palette-white: #FFFFFF;
+  --palette-mist: #EAF2EE;
   --palette-ink: #102C2B;
   --palette-muted: #405F5D;
+  --palette-line: #667F79;
   --palette-accent: #006B58;
+  --palette-ochre: #7A4E00;
+  --palette-gold: #C98A1B;
+  --palette-brick: #A3302B;
   --palette-night: #0B2020;
+  --palette-deep: #0F2828;
   --palette-raised: #153332;
   --palette-silver: #B7D2CB;
   --palette-bright: #76E4C0;
-  --palette-line: #667F79;
-  --font-display: Manrope, system-ui, sans-serif;
-  --font-body: system-ui, sans-serif;
-  --space-1: 0.25rem;
-  --space-2: 0.5rem;
-  --space-3: 1rem;
-  --space-4: 2rem;
-  --radius-small: 0.5rem;
-  --radius-large: 1.25rem;
-  --type-body: 1rem;
-  --type-display: 3rem;
-  --motion-fast: 120ms;
-  --motion-standard: 240ms;
+  --palette-sand: #F2CC7A;
+  --palette-blush: #FFA59E;
+
+  --font-display: "Manrope", "Segoe UI Variable Display", "Segoe UI", sans-serif;
+  --font-body: "Segoe UI Variable Text", "Segoe UI", system-ui, sans-serif;
+
   --color-background: var(--palette-paper);
   --color-surface: var(--palette-white);
-  --color-foreground: var(--palette-ink);
-  --color-muted: var(--palette-muted);
+  --color-surface-alt: var(--palette-mist);
+  --color-text: var(--palette-ink);
+  --color-text-muted: var(--palette-muted);
   --color-accent: var(--palette-accent);
   --color-on-accent: var(--palette-white);
-  --color-border: var(--palette-line);
-  --color-focus: var(--palette-accent);
+  --color-border: rgba(102, 127, 121, 0.30);
+  --color-border-strong: var(--palette-line);
+  --color-warning: var(--palette-ochre);
+  --color-danger: var(--palette-brick);
+  --color-held-out: var(--palette-gold);
   color-scheme: light;
 }
 @media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]):not([data-theme="dark"]) {
-  --color-background: var(--palette-night);
-  --color-surface: var(--palette-raised);
-  --color-foreground: var(--palette-paper);
-  --color-muted: var(--palette-silver);
-  --color-accent: var(--palette-bright);
-  --color-on-accent: var(--palette-night);
-  --color-border: var(--palette-silver);
-  --color-focus: var(--palette-bright);
+  :root:not([data-theme="light"]) {
+    --color-background: var(--palette-night);
+    --color-surface: var(--palette-raised);
+    --color-surface-alt: var(--palette-deep);
+    --color-text: var(--palette-paper);
+    --color-text-muted: var(--palette-silver);
+    --color-accent: var(--palette-bright);
+    --color-on-accent: var(--palette-night);
+    --color-border: rgba(183, 210, 203, 0.20);
+    --color-border-strong: var(--palette-silver);
+    --color-warning: var(--palette-sand);
+    --color-danger: var(--palette-blush);
+    --color-held-out: var(--palette-sand);
     color-scheme: dark;
   }
-}
-:root[data-theme="light"] {
-  --color-background: var(--palette-paper);
-  --color-surface: var(--palette-white);
-  --color-foreground: var(--palette-ink);
-  --color-muted: var(--palette-muted);
-  --color-accent: var(--palette-accent);
-  --color-on-accent: var(--palette-white);
-  --color-border: var(--palette-line);
-  --color-focus: var(--palette-accent);
-  color-scheme: light;
 }
 :root[data-theme="dark"] {
   --color-background: var(--palette-night);
   --color-surface: var(--palette-raised);
-  --color-foreground: var(--palette-paper);
-  --color-muted: var(--palette-silver);
+  --color-surface-alt: var(--palette-deep);
+  --color-text: var(--palette-paper);
+  --color-text-muted: var(--palette-silver);
   --color-accent: var(--palette-bright);
   --color-on-accent: var(--palette-night);
-  --color-border: var(--palette-silver);
-  --color-focus: var(--palette-bright);
+  --color-border: rgba(183, 210, 203, 0.20);
+  --color-border-strong: var(--palette-silver);
+  --color-warning: var(--palette-sand);
+  --color-danger: var(--palette-blush);
+  --color-held-out: var(--palette-sand);
   color-scheme: dark;
 }
