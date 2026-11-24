@@ -20,6 +20,18 @@ try{
     await Reject(()=>Task.Run(()=>store.Save(stale)),"stale writer preserves newer checkpoint");
     var interrupted=new LabRun{Prompt="Interrupted",Scope="gym",State=LabState.Running,Steps=[new(){Tool="fixture",Title="Read",State=LabState.Running}]};store.Save(interrupted);
     var recovered=store.Load().Single(x=>x.Id==interrupted.Id);Check(recovered.State==LabState.Interrupted&&recovered.Steps[0].State==LabState.Interrupted,"restart never resumes in-flight effects");
+    var comparison = Path.Combine(root, "comparisons", "retained.json");
+    Directory.CreateDirectory(Path.GetDirectoryName(comparison)!);
+    const string evidence = """{"State":"Running","Rows":[{"Output":"retained answer"}]}""";
+    File.WriteAllText(comparison, evidence);
+    Check(GymComparisonEvidence.DisplayState(comparison, "Running") == "Interrupted", "legacy comparison evidence recovers without a lease");
+    using (GymComparisonEvidence.Begin(comparison))
+    {
+        Check(GymComparisonEvidence.DisplayState(comparison, "Running") == "Running", "a live comparison remains running while its lease is held");
+    }
+    Check(GymComparisonEvidence.DisplayState(comparison, "Running") == "Interrupted" &&
+        File.ReadAllText(comparison) == evidence, "recovery retains interrupted comparison evidence byte for byte");
+    Check(GymComparisonEvidence.DisplayState(comparison, "Completed") == "Completed", "terminal comparison state is preserved");
     engine.Register(new("cancel","Cancel",LabEffect.Read,"{}","Cancellation fixture"),async(s,p,ct)=>{await Task.Delay(10000,ct);return new("text","Unexpected");});
     using(var ct=new CancellationTokenSource(20)){var cancelled=new LabRun{Prompt="Cancel",Scope="gym",Steps=[new(){Tool="cancel",Title="Cancel"}]};await engine.Execute(cancelled,cancelled.Steps[0],"gym",true,()=>{},ct.Token);Check(cancelled.State==LabState.Cancelled&&cancelled.Steps[0].Result==null,"cancellation retains truthful state");}
     var ordered=new LabRun{Prompt="Order",Scope="gym",Steps=[new(){Tool="fixture",Title="First"},new(){Tool="fixture",Title="Second"}]};await Reject(()=>engine.Execute(ordered,ordered.Steps[1],"gym",true,()=>{},default),"out-of-order effects rejected");

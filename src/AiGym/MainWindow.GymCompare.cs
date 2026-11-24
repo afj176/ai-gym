@@ -182,6 +182,10 @@ public sealed partial class MainWindow
                 };
                 examples.Children.Add(Surface(card, "GymSurfaceBrush", 14, 16));
             }
+            if (state == "Interrupted")
+                examples.Children.Insert(0, Muted(rows.Count == 0
+                    ? "Comparison ended before a response was saved. Run it again to collect new results."
+                    : "Comparison ended early. Saved responses are shown below. Run it again for a complete comparison.", 13));
             // Before the first response arrives, a skeleton in the shape of an example card shows that answers are on their way.
             if (first.Length == 0 && state == "Running")
                 examples.Children.Add(Surface(new StackPanel { Spacing = 14, Children = { Fluent.Skeleton(.25, .9, .6), FormGrid(560, Surface(Fluent.Skeleton(.5, .95, .8), "GymSurfaceAltBrush", 12, 14, border: false), Surface(Fluent.Skeleton(.5, .9, .85), "GymSurfaceAltBrush", 12, 14, border: false)) } }, "GymSurfaceBrush", 14, 16));
@@ -207,9 +211,9 @@ public sealed partial class MainWindow
             {
                 try
                 {
-                    using var json = JsonDocument.Parse(File.ReadAllText(file));
+                    using var json = GymComparisonEvidence.Open(file);
                     var r = json.RootElement;
-                    items.Add(new(file, r.GetProperty("State").GetString() ?? "Unknown", Who(r.GetProperty("Baseline")), Who(r.GetProperty("Candidate")), File.GetLastWriteTimeUtc(file)));
+                    items.Add(new(file, GymComparisonEvidence.DisplayState(file, r.GetProperty("State").GetString()), Who(r.GetProperty("Baseline")), Who(r.GetProperty("Candidate")), File.GetLastWriteTimeUtc(file)));
                 }
                 catch { /* Not a comparison evidence file; leave it untouched and unlisted. */ }
             }
@@ -242,6 +246,7 @@ public sealed partial class MainWindow
                 saved.Visibility = list.Count == 0 ? Visibility.Collapsed : Visibility.Visible;
             }
             finally { updating = false; }
+            if (saved.SelectedItem is SavedComparison selected) OpenSaved(selected);
             DatasetFact();
             UpdateActions();
         }
@@ -277,17 +282,23 @@ public sealed partial class MainWindow
         candidate.SelectionChanged += (_, _) => UpdateActions();
         datasets.SelectionChanged += (_, _) => { DatasetFact(); UpdateActions(); };
 
+        void OpenSaved(SavedComparison item)
+        {
+            try
+            {
+                using var json = GymComparisonEvidence.Open(item.Path);
+                var rows = json.RootElement.GetProperty("Rows").Deserialize<List<CompareRow>>() ?? [];
+                var state = GymComparisonEvidence.DisplayState(item.Path, json.RootElement.GetProperty("State").GetString());
+                ShowRows(state, item.Baseline, item.Candidate, rows, item.Path);
+            }
+            catch (Exception e) { notify("This evidence file could not be read: " + e.Message, InfoBarSeverity.Error); }
+        }
+
         saved.SelectionChanged += (_, _) =>
         {
             if (updating || saved.SelectedItem is not SavedComparison item) return;
-            try
-            {
-                using var json = JsonDocument.Parse(File.ReadAllText(item.Path));
-                var rows = json.RootElement.GetProperty("Rows").Deserialize<List<CompareRow>>() ?? [];
-                ShowRows(item.State, item.Baseline, item.Candidate, rows, item.Path);
-                Fluent.Appear(results, 6);
-            }
-            catch (Exception e) { notify("This evidence file could not be read: " + e.Message, InfoBarSeverity.Error); }
+            OpenSaved(item);
+            Fluent.Appear(results, 6);
         };
 
         compare.Click += async (_, _) =>
@@ -303,6 +314,7 @@ public sealed partial class MainWindow
                 var prompts = data.Examples.Where(x => held.Contains(x.entity)).Take(10).ToArray();
                 var id = Guid.NewGuid();
                 var path = Path.Combine(Store.Root, "comparisons", id + ".json");
+                using var lease = GymComparisonEvidence.Begin(path);
                 written = path;
                 var rows = new List<CompareRow>();
                 void Save(string state) => GymFiles.Atomic(path, new { Id = id, State = state, Dataset = data.Id, data.SourceHash, Baseline = new { a.Id, a.Model, a.Endpoint }, Candidate = new { b.Id, b.Model, b.Endpoint }, Rows = rows, Qualification = CompareQualification });
@@ -355,11 +367,7 @@ public sealed partial class MainWindow
             SafeRefresh();
             // The results on screen are this run's; the saved-evidence picker must name the same file, not an older one.
             if (written != null)
-            {
-                updating = true;
-                try { saved.SelectedItem = (saved.ItemsSource as IEnumerable<SavedComparison>)?.FirstOrDefault(x => x.Path == written); }
-                finally { updating = false; }
-            }
+                saved.SelectedItem = (saved.ItemsSource as IEnumerable<SavedComparison>)?.FirstOrDefault(x => x.Path == written);
         };
 
         SafeRefresh();
